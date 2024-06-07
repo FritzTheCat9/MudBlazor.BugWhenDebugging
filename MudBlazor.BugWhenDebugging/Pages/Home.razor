@@ -1,0 +1,32 @@
+﻿@page "/"
+@using MudBlazor.BugWhenDebugging.wwwroot.Components
+
+<PageTitle>Home</PageTitle>
+
+<MudText Typo="Typo.h5">Hello, world!</MudText>
+
+<MudText>Welcome to your new app.</MudText>
+
+@* working code without inheritance *@
+@* <MudCheckBox T="bool"
+             @bind-Value="isChecked"
+             For="() => isChecked"
+             Label="@CheckedLabel"
+             Color="Color.Primary">
+</MudCheckBox>
+
+<MudText>@isChecked</MudText> *@
+
+@* not working code with inheritance *@
+<MyCheckbox @bind-Value="isChecked"
+             For="() => isChecked"
+             Label="@CheckedLabel">
+</MyCheckbox>
+
+<MudText>@isChecked</MudText>
+
+
+@code {
+    public bool isChecked { get; set; }
+    public string? CheckedLabel { get; set; }
+}
