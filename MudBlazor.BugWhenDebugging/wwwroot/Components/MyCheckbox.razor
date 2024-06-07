@@ -1,12 +1,17 @@
 ﻿@inherits MudCheckBox<bool>
 
 <MudCheckBox T="bool"
-             @bind-Value="Value"
+             Value="Value"
+             ValueChanged="OnValueChanged"
              For="() => Value"
              Label="@Label"
              Color="Color.Primary">
 </MudCheckBox>
 
 @code {
-
+    private void OnValueChanged(bool value)
+    {
+        Value = value;
+        ValueChanged.InvokeAsync(value);
+    }
 }
