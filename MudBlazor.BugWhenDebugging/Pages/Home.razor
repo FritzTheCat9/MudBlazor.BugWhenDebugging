@@ -7,6 +7,7 @@
 
 <MudText>Welcome to your new app.</MudText>
 
+
 @* working code without inheritance *@
 @* <MudCheckBox T="bool"
              @bind-Value="isChecked"
@@ -14,15 +15,14 @@
              Label="@CheckedLabel"
              Color="Color.Primary">
 </MudCheckBox>
-
 <MudText>@isChecked</MudText> *@
+
 
 @* not working code with inheritance *@
 <MyCheckbox @bind-Value="isChecked"
             For="() => isChecked"
             Label="@CheckedLabel">
 </MyCheckbox>
-
 <MudText>@isChecked</MudText>
 
 
